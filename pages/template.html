@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <title></title>
+
+  <!-- Bootstrap Core CSS -->
+  <link href="../bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="../bower_components/metisMenu/dist/metisMenu.min.css" rel="stylesheet">
+  <link href="../assets/styles/sb-admin-2.css" rel="stylesheet">
+  <link href="../bower_components/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+  <link href="../assets/styles/salish-sea-style1.css" rel="stylesheet">
+  <link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
+  <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+  <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+  <!--[if lt IE 9]>
+  <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+  <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+  <![endif]-->
+
+</head>
+<body>
+  <!-- star nav -->
+  <div id="wrapper">
+    <div id="myModal1"  class="modal fade" role="dialog">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal">&times;</button>
+            <h4 class="modal-title">Help</h4>
+          </div>
+          <div class="modal-body">
+            <p>&nbsp&nbsp&nbsp&nbsp
+              To search, in the left-hand column to the table below, click on specific sub-issues you are interested in - you can select more than one category, and your selections will be highlighted.
+              Then, in the middle column, select what type of organization you are interested in.  When you make your selection,
+              the right-hand column will provide additional filters that you can use to further limit your search.  Click on the filters you would like to include.
+            </p>
+            <br>
+            <p>
+              &nbsp&nbsp&nbsp&nbsp If at any time you want to remove a selection, just click on the item in the table.
+              Review your selections by evaluating the items listed just below the table.
+              Finally, to complete your search, select Policy Actors to obtain the list of stakeholders, or alternatively,
+              Laws and Agreements to obtain a list of governance mechanisms.  You can toggle between Policy Actors and Laws
+              and Agreements by clicking on the appropriate button and clicking the Update button.
+            </p>
+            <br>
+            <p>&nbsp&nbsp&nbsp&nbsp
+              Use the search box to find results by keyword.
+            </p>
+
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Navigation -->
+    <nav class="navbar navbar-default navbar-static-top" role="navigation" style="margin-bottom: 0">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+      </div>
+
+      <ul class="nav navbar-top-links nav-pills">
+        <li class=" pull-left">
+          <a href="" id="homebtn" style="border:1px solid black;background-color:darkgray;border-radius:0px 0px 0px 0px;color:white;text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;font-size:14px"><i class="fa fa-home" aria-hidden="true"> Home</i></a>
+        </li>
+        <li id='currentCrumb' class="dropdown pull-left">
+
+        </li>
+
+
+
+<li class="pull-right">
+  <form class="navbar-form navbar-left" role="search" onsubmit="return false;">
+    <div class="form-group">
+      <input id="searchBar" type="text" class="form-control" placeholder="Search">
+    </div>
+    <button id="searchButton" class="btn btn-default">Submit</button>
+  </form>
+</li>
+
+<li class="pull-right">
+  <button type="button" id="helpModal" class="btn btn-info" data-toggle="modal" data-target="#myModal1" style="border-top-left-radius:0px;border-top-right-radius:0px;border:1px solid black;">Help</button>
+</li>
+</ul>
+</nav>
+
+<button id="triggerModal"  data-toggle="modal" data-target="#myModal"  hidden="true">Open Modal</button>
+<div id="modal">
+<div id="myModal" class="modal fade" role="dialog" style="position:fixed;top:500px">
+  <div class="modal-dialog modal-lg">
+    <div class="vertical-alignment-helper">
+      <div class="modal-dialog vertical-align-center">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal">&times;</button>
+            <h4 id="modalHeader" class="modal-title">Law Name</h4>
+          </div>
+          <div class="modal-body">
+            <div class="container-fluid">
+              <div class="row">
+                <b>
+                  <div id="tol" class="col-md-4">
+
+                  </div>
+                  <div id="nation" class="col-md-4">
+
+                  </div>
+                  <div id="issue" class="col-md-4">
+
+                  </div>
+                </b>
+              </div>
+              <br>
+              <br>
+              <div class="row">
+                <div id="desc" class="col-md-12">
+
+                </div>
+              </div>
+              <br>
+              <br>
+              <div class="row">
+                <div id="relev" class="col-md-12">
+
+                </div>
+              </div>
+              <br>
+              <br>
+              <div class="row">
+                <div class="col-md-12">
+                  <a href="" id="web"> </a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+</div>
+<!-- end nav bar -->
+
+<div id="page-wrapper" style="margin:0px;border:none;padding:0px;">
+  <br>
+
+  <div id="page-description" class=""width="75%" >
+    &nbsp&nbsp&nbsp&nbsp&nbspThis section addresses a range of issues related to water, sub-categorized to address Water Quality, Quantity, and Restoration, Freshwater Resources, Marine and Nearshore Ecosystems, and Fisheries and Aquaculture.  Pick a selection(s) from the tables below to filter your results. Use the <a id="helpLink"  onclick="document.getElementById('helpModal').click()">help</a> button  for additional instructions.
+  </div>
+  <br>
+  <div class="container-fluid">
+    <divclass="row">
+      <div id="filterbox" class="col-md-12">
+        <div id="filter1" class="col-md-4">
+          <div class="row">
+            <div class="col-md-12">
+              <div class="divider filter-header">Sub-Issues
+              </div>
+            </div>
+          </div>
+          <div class="row filter-list">
+            <div class="col-md-12">
+              <ul id="subissues" class="nav">
+
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div id="filter2" class="col-md-4">
+          <div class="row">
+            <div class="col-md-12">
+              <div class="divider filter-header">Organization Type
+              </div>
+            </div>
+          </div>
+          <div class="row filter-list">
+            <div class="col-md-12">
+              <ul id="level-list" class="nav">
+
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div id="filter3" class="col-md-4">
+          <div class="row">
+            <div class="col-md-12">
+              <div class="divider filter-header">Sectors
+              </div>
+            </div>
+          </div>
+          <div class="row filter-list">
+            <div class="col-md-12">
+              <ul id="sectors" class="nav">
+                <label id="placeholder">Select an organization type</label>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <ul id="selectedFilters" class="">
+
+    </ul>
+    <br>
+    <br>
+    <button id="update" type="button" name="button" hidden>UPDATE</button>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <ul class="nav nav-tabs" align="center">
+            <li><button id="PolicyActorTab" data-toggle="tab" data-id="PolicyActors" class="btn btn-info" name="button">Policy Actors <span id="PAbadge" class="badge"></span></button></li>
+            <li><button id="LawsAgreementsTab" data-toggle="tab" data-id="LawsAndAgreements" class="btn btn-info" name="button ">Laws and Agreements <span id="LAbadge" class="badge"></span></button></li>
+            <li id="currentTab" class="btn-success" style ="border:solid 1px black;display:inline-block; float:right;padding:5px;margin:3px;border-radius:4px;" >
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div id="LawsAgreementsSection">
+    <div id="LawsAgreementsData" class="">
+
+    </div>
+    <ul id="lawpagination" class="pagination" >
+
+    </ul>
+  </div>
+  <div id="PolicyActorSection">
+    <div id="PolicyActorData" class="">
+
+    </div>
+    <ul id="actorpagination" class="pagination" >
+
+    </ul>
+  </div>
+  <div>
+    <div id="result1" class="">
+
+    </div>
+
+  </div>
+</div>
+
+
+<!-- Scripts -->
+<script src="../models/PageObjects.js"></script>
+<script src="../assets/scripts/js.cookie.js"></script>
+<script src="https://code.jquery.com/jquery-1.12.3.min.js" integrity="sha256-aaODHAgvwQW1bFOGXMeX+pC4PZIPsvn2h1sArYOhgXQ=" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/ui/1.11.4/jquery-ui.min.js"   integrity="sha256-xNjb53/rY+WmG+4L6tTl9m6PpqknWZvRt0rO1SRnJzw="   crossorigin="anonymous"></script>
+<script src="../bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+<script src="../bower_components/metisMenu/dist/metisMenu.min.js"></script>
+<script src="../assets/scripts/sb-admin-2.js"></script>
+<script src="../controllers/PolicyPage.js"></script>
+<script src="../controllers/Card.js"></script>
+<script src="../controllers/CardBox.js"></script>
+<script src="../controllers/RequestController.js"></script>
+<script src="../controllers/FilterBox.js"></script>
+
+
+</body>
+</html>
